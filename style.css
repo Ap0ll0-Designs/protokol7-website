@@ -1,9 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Anonymous+Pro&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Fira+Mono:400');
 
 * {
     box-sizing: border-box;
     list-style: none;
+    text-decoration: none;
 }
 
 html{
@@ -11,112 +10,62 @@ html{
 }
 
 body {
-    max-width: 100%;
-    overflow-x: hidden;
-    background: #131313;
     margin: 0;
     padding: 0;
+    max-width: 100%;
+    overflow-x: hidden;
+    background: #0F1011;
 }
 
-
-
 .home{
-    background-image: url("assets/img/backgroundd.jpg");
-    background-repeat: no-repeat;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
     width: 100%;
     height: 100vh;
 }
 
-
-/*sticky navbar*/
 header{
-    position: -webkit-sticky;
-    position: sticky;
-    top: 0.1vh;
-    z-index: 1;
-
-    /*navbar*/
-    background-color: #000000;
-    width: 100%;
-    height: 8vh;
-    /*margin: 0 10% 0 10%;*/
-    padding: 0;
     display: flex;
-    align-items: center;
+}
 
-    /*nav-border*/
-    border-top: 2px solid;
-    border-bottom: 2px solid;
-    border-left: 2px solid;
-    border-right: 2px solid;
-    border-image-source: linear-gradient(45deg, #006995, #4BC7CE);
-    border-image-slice: 1;
+/*nav*/
+.navbar{
+
+}
+
+/*nav ul*/
+.navbar #nav-tags{
+    font-family: 'Anonymous Pro', monospace;
+    color: #969696;
+    display: flex;
 }
 
 
+a:visited{
+    color: #969696;
+}
 .logo{
-    display: flex;
-    justify-self: flex-start;
     margin: 0;
     padding: 0;
-    width: 3rem;
+    width: 2rem;
+    
 }
 
-.sticky > #navbar {
-    display: flex;
-}
-
-#navbar > li > a {
-    text-decoration: none;
-    font-family: 'Fira Mono', monospace;
-    font-weight: bold;
-    font-size: 3vh;
-    letter-spacing: 1px;
-    color: #4BC7CE;
-}
-
-/*nav li hover*/
-#navbar a:hover{
-    color: white;
-}
-
-#navbar a:active{
-    color: #4BC7CE;
-    font-weight: bold;
-}
-
-/*scorpius*/
+/*Protokol7*/
 #main-title {
     margin: 0;
     padding: 0;
-    font-family: "Goudy Old Style";
+    font-family: Raleway, serif;
     letter-spacing: 7px;
     -webkit-text-fill-color: transparent;
 
     /*web-name animation*/
-    background: linear-gradient(to right, #006995,#4BC7CE,springgreen);
+    background: linear-gradient(80deg, #00008B,#0147FA,#007FFF,#5AB5FF);
     background-size: 200% 200%;
     animation: rainbow 4s ease-in-out infinite;
     -webkit-background-clip:text;
-    font-size: 8rem;
+    font-size: 5rem;
     width:100%;
-    transition: color .2s ease-in-out;
-    text-transform:uppercase;
-    font-weight:900;
-}
-
-/*scorpius & software developer*/
-
-.web-name{
-    display: grid;
-    grid-template-rows: 200px 100px;
-    grid-template-columns: 1fr;
-    justify-items: center;
-    align-items: center;
+    transition: color .8s ease-in-out;
+    font-weight: bold;
 }
 
 #main-title:hover{
@@ -125,314 +74,12 @@ header{
 
 @keyframes rainbow {
     0%{background-position:left}
-    50%{background-position:right}
+    40%{background-position:right}
+    80%{background-position:right}
     100%{background-position:left}
 }
 
-.home{
-    display: grid;
-    grid-template-rows: 200px 100px;
-    justify-content: center;
-    align-content: center;
-    row-gap: 100px;
-}
 
-
-/*software developer*/
-
-.animation-title {
-    display: grid;
-    justify-items: center;
-    width: fit-content;
-    height: 100px;
-    margin: 0;
-    padding: 0;
-    /*background: #131313;*/
-    color: #fff;
-    font-size: 3em;
-    font-family: 'Fira Mono', monospace;
-    letter-spacing: -7px;
-}
-
-#title{
-    animation: glitch 5s linear infinite;
-}
-
-#title:before{
-    animation: glitchTop 4s linear infinite;
-    clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
-    -webkit-clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
-}
-
-#title:after{
-    content: attr(title);
-    position: absolute;
-    left: 0;
-    animation: glitchBotom 1.5s linear infinite;
-    clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
-    -webkit-clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
-}
-
-/*
-*   Definition of the glitch animations
-*/
-
-@keyframes glitchTop{
-    2%,64%{
-        transform: translate(2px,-2px);
-    }
-    4%,60%{
-        transform: translate(-2px,2px);
-    }
-    62%{
-        transform: translate(13px,-1px) skew(-13deg);
-    }
-}
-
-@keyframes glitch{
-    2%,64%{
-        transform: translate(2px,0) skew(0deg);
-    }
-    4%,60%{
-        transform: translate(-2px,0) skew(0deg);
-    }
-    62%{
-        transform: translate(0,0) skew(5deg);
-    }
-}
-
-@keyframes glitchBottom{
-    2%,64%{
-        transform: translate(-2px,0);
-    }
-    4%,60%{
-        transform: translate(-2px,0);
-    }
-    62%{
-        transform: translate(-22px,5px) skew(21deg);
-    }
-}
-
-/*about me area*/
-
-.container{
-    background-color: #131313;
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    grid-template-rows: 0.5fr 0.5fr 2fr;
-}
-
-.about-title{
-    font-family: 'Anonymous Pro', monospace;
-    font-weight: bold;
-    font-size: 5vh;
-    color: #4BC7CE;
-    text-align: left;
-    padding-left: 15%;
-    position: relative;
-    display: grid;
-    grid-row-start: 2;
-    grid-row-end: 3;
-}
-
-.robi{
-    display: grid;
-    grid-row-start: 3;
-    grid-row-end: 4;
-    height: auto;
-    max-width: 100%;
-    border-top: 2px solid;
-    border-bottom: 2px solid;
-    border-left: 2px solid;
-    border-right: 2px solid;
-    border-image-source: linear-gradient(45deg, #006995, #4BC7CE);
-    border-image-slice: 1;
-}
-
-/*image animation*/
-.robi:hover{
-    box-shadow:
-            1px 1px #4BC7CE,
-            2px 2px #4BC7CE,
-            3px 3px #4BC7CE;
-    -webkit-transform: translateX(-3px);
-    transform: translateX(-3px);
-}
-
-.about{
-    font-family: 'Anonymous Pro', monospace;
-    line-height: 30px;
-    letter-spacing: 2px;
-    font-size: 2.4vh;
-    padding-left: 15%;
-    color: white;
-    display: grid;
-    grid-row-start: 3;
-    grid-row-end: 4;
-}
-
-/*career area*/
-
-.container2{
-    background-color: #131313;
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    grid-template-rows: 0.5fr 0.5fr 2fr;
-}
-
-.career-title{
-    font-family: 'Anonymous Pro', monospace;
-    font-weight: bold;
-    font-size: 5vh;
-    color: #4BC7CE;
-    text-align: left;
-    padding-left: 15%;
-    position: relative;
-    display: grid;
-    grid-row-start: 2;
-    grid-row-end: 3;
-}
-
-.career{
-    font-family: 'Anonymous Pro', monospace;
-    line-height: 30px;
-    letter-spacing: 2px;
-    font-size: 2.4vh;
-    color: white;
-    padding-left: 15%;
-    display: grid;
-    grid-row-start: 3;
-    grid-row-end: 4;
-}
-
-/*projects area*/
-
-.container3{
-    background-color: #131313;
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    grid-template-rows: 0.5fr 0.5fr 2fr;
-
-}
-
-.projects-title{
-    font-family: 'Anonymous Pro', monospace;
-    font-weight: bold;
-    font-size: 5vh;
-    color: #4BC7CE;
-    text-align: left;
-    padding-left: 15%;
-    position: relative;
-    display: grid;
-    grid-row-start: 2;
-    grid-row-end: 3;
-}
-
-.projects{
-    font-family: 'Anonymous Pro', monospace;
-    line-height: 30px;
-    letter-spacing: 2px;
-    font-size: 2.4vh;
-    color: white;
-    padding-left: 15%;
-    display: grid;
-    grid-row-start: 3;
-    grid-row-end: 4;
-}
-
-/*contact area*/
-
-.container4{
-    background-color: #131313;
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    grid-template-rows: 0.5fr 0.5fr 2fr;
-
-}
-
-.contact-title{
-    font-family: 'Anonymous Pro', monospace;
-    font-weight: bold;
-    font-size: 5vh;
-    color: #4BC7CE;
-    text-align: left;
-    padding-left: 15%;
-    position: relative;
-    display: grid;
-    grid-row-start: 2;
-    grid-row-end: 3;
-}
-
-.contact{
-    font-family: 'Anonymous Pro', monospace;
-    line-height: 30px;
-    letter-spacing: 2px;
-    font-size: 2.4vh;
-    color: white;
-    padding-left: 15%;
-    display: grid;
-    grid-row-start: 3;
-    grid-row-end: 4;
-}
-
-/*form area*/
-
-.container5{
-    background-color: #131313;
-    position: relative;
-    width: 100%;
-    height: 100vh;
-
-}
-
-.form-title{
-    font-family: 'Anonymous Pro', monospace;
-    font-weight: bold;
-    font-size: 5vh;
-    color: #4BC7CE;
-    text-align: left;
-    padding-left: 15%;
-    position: relative;
-}
-
-.form{
-    font-family: 'Anonymous Pro', monospace;
-    line-height: 30px;
-    letter-spacing: 2px;
-    font-size: 2.4vh;
-    color: white;
-    padding-left: 15%;
-}
-
-.contact-form{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-hr{
-    width: 80%;
-    height: 0.1vh;
-    background: #909090;
-    border: none;
-    border-radius: 80%;
-}
-
-@media screen and (max-width:480px){
-
-}
 
 
 
